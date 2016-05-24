@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GIS Perm</title>
+	<meta charset="utf-8" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="static/leaflet.css" />
+	<link rel="stylesheet" href="static/easy-button.css" />
+</head>
+<body>
+	<div id="map" style="position:absolute; top:0;bottom:0;left:0;right:0;"></div>
+
+	<script src="static/leaflet.js"></script>
+	<script src="static/easy-button.js"></script>
+	<script src="static/jquery-1.11.2.min.js"></script>
+	<script src="static/gis_server2.js"></script>
+	<style>
+	.wait {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: -50px 0px 0px -50px;
+		z-index: 10000;
+		visibility: hidden;
+	}
+	.msg {
+		background-color: white;
+		position: absolute;
+		top: 0%;
+		left: 20%;
+		right: 20%;
+		z-index: 10000;
+		visibility: hidden;
+		padding: 20px;
+		border: 2px solid red;  /* Параметры рамки */
+		padding: 20px; /* Поля вокруг текста */
+		box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
+	}
+	</style>
+	<div class="wait" id="wait"><img src="/static/images/Wait.gif"/></div>
+	<div class="msg" id="msg"></div>
+
+</body>
+</html>
+
+

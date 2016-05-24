@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function fgfg()
+        {
+			var xmlhttp = new XMLHttpRequest();
+
+            xmlhttp.open("GET", "/GIS/send/way");
+            xmlhttp.onreadystatechange = function()
+            {
+                var loading = document.getElementById ( "wait" );
+                if ( xmlhttp.readyState == 1 )
+                    loading.style.visibility = "visible";
+                if (xmlhttp.readyState == 4)
+                {
+                    if (xmlhttp.status == 200)
+                    {
+                        console.log(xmlhttp.responseText);
+                        loading.style.visibility = "hidden";
+                    }
+                    else
+                    {
+                        //delete marker
+                    }
+                }
+            }
+
+            xmlhttp.send(null);
+		}
+
+    </script>
+    <style>
+        .wait {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -50px 0px 0px -50px;
+            z-index: 10000;
+            visibility: hidden
+        }
+    </style>
+</head>
+<body>
+    <div class="wait" id="wait"><img src="/static/images/Wait.gif"/></div>
+</body>
+
+</html>
